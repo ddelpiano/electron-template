@@ -34,6 +34,10 @@ export default class Main extends React.Component {
 	let port2 = node2.addInPort('in');
 	node2.setPosition(400, 100);
 
+	var node3 = new DefaultNodeModel('Node 2', 'rgb(192,255,0)');
+	let port3 = node3.addInPort('in');
+	node3.setPosition(200, 400);
+
 	// link the ports
 	// let link1 = port1.link(port2);
 	// link1.getOptions().testName = 'Test';
@@ -41,9 +45,12 @@ export default class Main extends React.Component {
     const link1 = new DefaultLinkModel();
     link1.setSourcePort(node1.getPort('out'));
     link1.setTargetPort(node2.getPort('in'));
+	const link2 = new DefaultLinkModel();
+    link2.setSourcePort(node1.getPort('out'));
+    link2.setTargetPort(node3.getPort('in'));
 
 	//4) add the models to the root graph
-	model.addAll(node1, node2, link1);
+	model.addAll(node1, node2, node3, link1, link2);
 
 	//5) load model into engine
 	engine.setModel(model);
