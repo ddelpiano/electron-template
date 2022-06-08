@@ -15,12 +15,12 @@ const styles = (theme) => ({
   },
 });
 
-class JSCustomNodeWidget extends React.Component {
+class JSCustomNodeWidget2 extends React.Component {
   render() {
     const { classes } = this.props;
     return (
       <>
-        <div className="custom-node" style={{ zIndex: 999999999 }}>
+        <div className="custom-node2" style={{ zIndex: 999999999 }}>
           <PortWidget
             style={{position: 'absolute', top: '0px', left: '0px'}}
             engine={this.props.engine}
@@ -71,4 +71,4 @@ class JSCustomNodeWidget extends React.Component {
   }
 }
 
-export default withStyles(styles)(JSCustomNodeWidget);
+export default withStyles(styles)(JSCustomNodeWidget2);

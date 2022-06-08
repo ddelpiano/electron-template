@@ -24,18 +24,37 @@ export default class Main extends React.Component {
 	var node1 = new JSCustomNodeModel({
 		name: 'Node 1',
 		color: 'rgb(0,192,255)',
-        pnlClass: 'ProcessingMechanism'
+        pnlClass: 'ProcessingMechanism',
+		shape: 'default'
 	});
+
+	var node4 = new JSCustomNodeModel({
+		name: 'Node 4',
+		color: 'rgb(0,192,255)',
+        pnlClass: 'ProcessingMechanism',
+		shape: 'circle'
+	});
+
+	var node5 = new JSCustomNodeModel({
+		name: 'Node 5',
+		color: 'rgb(0,192,255)',
+        pnlClass: 'ProcessingMechanism',
+		shape: 'hexagon'
+	});
+
+	node4.setPosition(900,200);
+	node5.setPosition(550,500);
+
 	node1.setPosition(100, 100);
 	// let port1 = node1.addOutPort('Out');
 
 	//3-B) create another default node
 	var node2 = new DefaultNodeModel('Node 2', 'rgb(192,255,0)');
-	let port2 = node2.addInPort('in');
+	node2.addInPort('in');
 	node2.setPosition(400, 100);
 
 	var node3 = new DefaultNodeModel('Node 2', 'rgb(192,255,0)');
-	let port3 = node3.addInPort('in');
+	node3.addInPort('in');
 	node3.setPosition(200, 400);
 
 	// link the ports
@@ -50,7 +69,7 @@ export default class Main extends React.Component {
     link2.setTargetPort(node3.getPort('in'));
 
 	//4) add the models to the root graph
-	model.addAll(node1, node2, node3, link1, link2);
+	model.addAll(node1, node2, node3, link1, link2, node4, node5);
 
 	//5) load model into engine
 	engine.setModel(model);

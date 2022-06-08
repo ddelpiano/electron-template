@@ -74,6 +74,61 @@
 	position: relative;
 }
 
+.custom-node2{
+	border: solid 2px gray;
+	border-radius: 50%;
+	width: 250px;
+	height: 250px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	position: relative;
+}
+
+.custom-node3{
+	border: solid 2px gray;
+	border-radius: 5px;
+	width: 250px;
+	height: 200px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	position: relative;
+}
+
+#hexagon {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  background: white;
+}
+
+#hexagon::before {
+  content: "";
+  position: absolute;
+  top: -62px;
+  left: -1px;
+  width: 0;
+  height: 0;
+  border-left: 102px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 62px solid white;
+}
+
+#hexagon::after {
+  content: "";
+  position: absolute;
+  bottom: -62px;
+  left: -1px;
+  width: 0;
+  height: 0;
+  border-left: 102px solid transparent;
+  border-right: 100px solid transparent;
+  border-top: 62px solid white;
+}
+
 .custom-node-color{
 	position: absolute;
 	top: 50%;
