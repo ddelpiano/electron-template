@@ -2,6 +2,7 @@ const path = require("path");
 
 const { app, BrowserWindow } = require("electron");
 const isDev = require("electron-is-dev");
+const debug = require('electron-debug');
 
 function createWindow() {
   // Create the browser window.
@@ -23,7 +24,8 @@ function createWindow() {
 
   // Open the DevTools.
   if (isDev) {
-    win.webContents.openDevTools({ mode: "detach" });
+    debug();
+    // win.webContents.openDevTools({ mode: "detach" });
   }
 }
 
