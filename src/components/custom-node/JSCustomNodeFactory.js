@@ -17,16 +17,16 @@ export class JSCustomNodeFactory extends AbstractReactFactory {
 	generateReactWidget(event) {
 		switch (event?.model?.options?.shape) {
 			case 'default': {
-				return <JSCustomNodeWidget engine={this.engine} node={event.model} />;
+				return <JSCustomNodeWidget engine={this.engine} node={event.model} resetCallback={event?.model?.options?.resetCallback} />;
 			}
 			case 'circle': {
-				return <JSCustomNodeWidget2 engine={this.engine} node={event.model} />;
+				return <JSCustomNodeWidget2 engine={this.engine} node={event.model} resetCallback={event?.model?.options?.resetCallback} />;
 			}
 			case 'hexagon': {
-				return <JSCustomNodeWidget3 engine={this.engine} node={event.model} />;
+				return <JSCustomNodeWidget3 engine={this.engine} node={event.model} resetCallback={event?.model?.options?.resetCallback} />;
 			}
 			default: {
-				return <JSCustomNodeWidget engine={this.engine} node={event.model} />;
+				return <JSCustomNodeWidget engine={this.engine} node={event.model} resetCallback={event?.model?.options?.resetCallback} />;
 			}
 		}
 	}

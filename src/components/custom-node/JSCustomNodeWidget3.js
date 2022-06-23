@@ -3,6 +3,7 @@ import InputNode from "./InputNode";
 import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
+import Button from '@material-ui/core/Button';
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Typography from "@material-ui/core/Typography";
 import { PortWidget } from "@projectstorm/react-diagrams";
@@ -47,7 +48,15 @@ class JSCustomNodeWidget3 extends React.Component {
           >
             <InputNode property="Props1" top="15" />
             <InputNode property="Props2" top="60" />
-            <Accordion style={{position: 'absolute', top: "130px", left: '0px', marginLeft: '0px', paddingLeft: '0px'}}>
+            <Button
+              style={{position: 'absolute', top: "130px", left: '0px', marginLeft: '0px', paddingLeft: '0px'}}
+              variant="contained"
+              color="primary"
+              onClick={() => { this.props?.resetCallback(); }}
+            >
+              Open composition
+            </Button>
+            <Accordion style={{position: 'absolute', top: "150px", left: '0px', marginLeft: '0px', paddingLeft: '0px'}}>
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
